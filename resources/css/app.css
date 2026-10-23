@@ -1,0 +1,360 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', ui-sans-serif,
+        system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Token brand HUMANIX */
+    --color-navy: var(--hx-navy);
+    --color-primary-bright: var(--hx-primary-bright);
+    --color-cyan: var(--hx-cyan);
+    --color-surface: var(--hx-surface);
+    --color-text: var(--hx-text);
+    --color-text-muted: var(--hx-text-muted);
+    --color-success: var(--hx-success);
+    --color-warning: var(--hx-warning);
+    --color-danger: var(--hx-danger);
+    --radius-card: 12px;
+    --radius-control: 10px;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    /* Palet HUMANIX (dari referensi dashboard HRD) */
+    --hx-navy: #071b49;
+    --hx-primary: #0057ff;
+    --hx-primary-bright: #007bff;
+    --hx-cyan: #00c8f0;
+    --hx-background: #f5f8ff;
+    --hx-surface: #ffffff;
+    --hx-text: #111827;
+    --hx-text-muted: #6b7280;
+    --hx-success: #16a34a;
+    --hx-warning: #f59e0b;
+    --hx-danger: #dc2626;
+    --hx-border: #e5e7eb;
+
+    --background: var(--hx-background);
+    --foreground: var(--hx-text);
+    --card: var(--hx-surface);
+    --card-foreground: var(--hx-text);
+    --popover: var(--hx-surface);
+    --popover-foreground: var(--hx-text);
+    --primary: var(--hx-primary);
+    --primary-foreground: #ffffff;
+    --secondary: #eef4ff;
+    --secondary-foreground: var(--hx-navy);
+    --muted: #f3f4f6;
+    --muted-foreground: var(--hx-text-muted);
+    --accent: #eef4ff;
+    --accent-foreground: var(--hx-primary);
+    --destructive: var(--hx-danger);
+    --destructive-foreground: var(--hx-danger);
+    --border: var(--hx-border);
+    --input: var(--hx-border);
+    --ring: var(--hx-primary-bright);
+    --chart-1: var(--hx-primary);
+    --chart-2: var(--hx-cyan);
+    --chart-3: var(--hx-primary-bright);
+    --chart-4: var(--hx-success);
+    --chart-5: var(--hx-warning);
+    --radius: 0.75rem;
+    --sidebar: var(--hx-surface);
+    --sidebar-foreground: #4b5563;
+    --sidebar-primary: var(--hx-primary);
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #eef4ff;
+    --sidebar-accent-foreground: var(--hx-primary);
+    --sidebar-border: var(--hx-border);
+    --sidebar-ring: var(--hx-primary-bright);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/*
+ * Halaman masuk (login & halaman auth lain) — mengikuti desain "Login_humanix" 1920x1080.
+ * Desktop: panggung 16:9 berskala seperti background-size: cover; kartu form diletakkan di posisi
+ * kartu pada desain (x 1044–1553, y 264–817) sehingga ikut berskala bersama latar.
+ * --u = 1px desain (1/1920 lebar panggung). Ukuran teks/kontrol diberi batas minimum agar tetap
+ * terbaca di layar kecil. Ponsel/layar pendek: logo di atas, kartu di bawah (alur normal).
+ */
+.auth-shell {
+    --u: 0.78px;
+    min-height: 100svh;
+    background: radial-gradient(
+        120% 80% at 20% 0%,
+        #26272b 0%,
+        #0b0b0c 55%,
+        #050505 100%
+    );
+    color: #ffffff;
+}
+
+/* Ponsel/layar pendek: panggung = kolom biasa (logo, kartu, hak cipta). */
+.auth-stage {
+    display: flex;
+    min-height: 100svh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 32px 16px;
+}
+
+.auth-stage .auth-card {
+    width: 100%;
+    max-width: 440px;
+}
+
+.auth-hero {
+    width: min(320px, 85%);
+    height: auto;
+    /* Tepi potongan gambar dipudarkan agar menyatu dengan latar. */
+    mask-image: radial-gradient(
+        ellipse 72% 62% at 50% 50%,
+        #000 45%,
+        transparent 100%
+    );
+}
+
+.auth-footer {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.auth-card {
+    position: relative;
+    border-radius: max(12px, calc(var(--u) * 18));
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: linear-gradient(180deg, #111112 0%, #0c0c0d 55%, #09090a 100%);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
+    padding: max(24px, calc(var(--u) * 52)) max(20px, calc(var(--u) * 40))
+        max(24px, calc(var(--u) * 40));
+
+    /* Token warna gelap untuk isi kartu (Label, Input, tautan) tanpa mengubah komponen. */
+    --color-navy: #ffffff;
+    --color-text: #f3f4f6;
+    --color-text-muted: #a1a1aa;
+    --color-foreground: #ffffff;
+    --color-muted-foreground: #a1a1aa;
+    --color-surface: #1e1c1c;
+    --color-background: #1e1c1c;
+    --color-input: rgba(255, 255, 255, 0.06);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-primary-bright: #4da3ff;
+    --color-accent: rgba(255, 255, 255, 0.06);
+    --color-ring: #3b82f6;
+    color: var(--color-text);
+}
+
+.auth-card .auth-title {
+    font-size: max(24px, calc(var(--u) * 34));
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.auth-card .auth-description {
+    margin-top: max(6px, calc(var(--u) * 10));
+    font-size: max(14px, calc(var(--u) * 17));
+    line-height: 1.35;
+    color: #d4d4d8;
+}
+
+.auth-card .auth-body {
+    margin-top: max(24px, calc(var(--u) * 40));
+    font-size: max(13px, calc(var(--u) * 14));
+}
+
+.auth-card label {
+    font-size: max(12px, calc(var(--u) * 12));
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.auth-card input:not([type='checkbox']) {
+    height: max(42px, calc(var(--u) * 47));
+    border-radius: max(8px, calc(var(--u) * 8));
+    border-color: transparent;
+    background: #1e1c1c;
+    color: #ffffff;
+    font-size: max(14px, calc(var(--u) * 17));
+}
+
+.auth-card input:not([type='checkbox'])::placeholder {
+    color: #6b6b70;
+}
+
+.auth-card input:not([type='checkbox']):focus-visible {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.auth-card [role='checkbox'] {
+    width: max(20px, calc(var(--u) * 24));
+    height: max(20px, calc(var(--u) * 24));
+    border-radius: 5px;
+    border-color: transparent;
+    background: #584a4a;
+}
+
+.auth-card [role='checkbox'][data-state='checked'] {
+    background: #0079fb;
+}
+
+.auth-card .auth-submit,
+.auth-card form button:not([type='button']) {
+    height: max(42px, calc(var(--u) * 47));
+    border-radius: max(6px, calc(var(--u) * 6));
+    background: linear-gradient(90deg, #0079fb 0%, #1062c6 50%, #1e4b90 100%);
+    font-size: max(14px, calc(var(--u) * 17));
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.auth-card .auth-submit:hover:not(:disabled),
+.auth-card form button:not([type='button']):hover:not(:disabled) {
+    filter: brightness(1.08);
+}
+
+@media (min-width: 1024px) and (min-height: 600px) {
+    .auth-shell {
+        --stage-w: max(100vw, 100vh * 16 / 9);
+        --u: calc(var(--stage-w) / 1920);
+        position: relative;
+        height: 100svh;
+        overflow: hidden;
+        background: #050505;
+    }
+
+    .auth-stage {
+        display: block;
+        min-height: 0;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--stage-w);
+        aspect-ratio: 16 / 9;
+        transform: translate(-50%, -50%);
+        background: url('/images/login-bg.webp') center / 100% 100% no-repeat;
+    }
+
+    /* Posisi & ukuran kartu sesuai desain (persentase dari panggung 1920x1080). */
+    .auth-stage .auth-card {
+        position: absolute;
+        left: 54.375%;
+        top: 24.444%;
+        width: 26.5625%;
+        max-width: none;
+        min-height: 51.296%;
+    }
+
+    /* Lebar deskripsi seperti desain (terbungkus menjadi dua baris). */
+    .auth-stage .auth-description {
+        max-width: calc(var(--u) * 380);
+    }
+
+    /* Logo & hak cipta sudah ada di gambar latar. */
+    .auth-hero,
+    .auth-footer {
+        display: none;
+    }
+}

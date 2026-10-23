@@ -1,0 +1,3 @@
+# Scheduler HUMANIX (pasang di crontab pengguna www-data: sudo crontab -u www-data -e).
+# Menjalankan: tandai tidak hadir 23:55, pengingat penilaian Senin 08:00, backup 01:00 (WIB).
+* * * * * cd /var/www/humanix && php artisan schedule:run >> /dev/null 2>&1
